@@ -1,13 +1,17 @@
 import React from 'react';
 import { Component } from 'react';
 
-import Logo from './logo/logo';
+import Portal from './portal/portal_entry';
+import Navigation from './navigation/navigation_entry';
+import Artwork from './artwork/artwork_entry';
 
 export default class Entry extends Component {
   render() {
     return (
       <div className="layout">
-        <Logo />
+        <Portal />
+        <Navigation />
+        <Artwork />
       </div>
     );
   }

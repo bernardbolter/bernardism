@@ -1,0 +1,69 @@
+.portal
+  width: 92%
+  padding: 4%
+  display: block
+  background: $portal_back
+
+  p
+    font-family: $mono-base
+    color: $aka
+    margin: 0
+    padding: 0
+    font-size: 15vw
+    word-wrap: break-word
+    text-align: justify
+    line-height: 1
+    letter-spacing: 0.05em
+
+    +min-screen(500px)
+      font-size: 11vw
+
+    +min-screen(900px)
+      font-size: 11vw
+
+  +e(name-links)
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    width: 98%
+    background: $portal_back
+    margin: 2% 1% 0
+    align-items: flex-end
+
+  +e(name)
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    p
+      font-family: $body-regular
+      display: block
+      text-transform: uppercase
+      font-size: 30px
+      opacity: 0.4
+      margin: 0 0 5px 0
+
+  +e(links)
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    a
+      font-family: $body-regular
+      text-decoration: none
+      font-size: 18px
+      text-align: right
+      letter-spacing: 0.05em
+      margin: 0 0 5px 0
+
+    +m(color)
+      color: $history
+
+    +m(dcs)
+      color: $travel
+
+    +m(pullup)
+      color: $pullup
+
+    +m(smooth)
+      color: $smooth

@@ -6,3 +6,21 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'DIN-BoldAlternate';
+    src: url('fonts/DIN-BoldAlternate.woff2') format('woff2'),
+         url('fonts/DIN-BoldAlternate.woff') format('woff'),
+         url('fonts/DIN-BoldAlternate.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DIN-RegularAlternate';
+    src: url('fonts/DIN-RegularAlternate.woff2') format('woff2'),
+         url('fonts/DIN-RegularAlternate.woff') format('woff'),
+         url('fonts/DIN-RegularAlternate.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

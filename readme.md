@@ -7,7 +7,7 @@ The Web Portal of Bernard John bolter IV
 commands for compiling -
 
 ```
-'gulp inbound' for development, 'gulp outbound' for production
+'gulp' for development, 'gulp outbound' for production
 ```
 
 ## Built With
@@ -17,6 +17,6 @@ commands for compiling -
 * Gulp
 * inline SVG sprite system with gulp-svgstore
 
-## Authors
+## Author
 
-* **Bernard John Bolter IV** - *Initial work* - [bernardbolter](https://github.com/bernardbolter)
+* **Bernard John Bolter IV** - [bernardbolter](https://github.com/bernardbolter)
