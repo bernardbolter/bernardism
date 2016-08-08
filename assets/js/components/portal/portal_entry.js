@@ -1,24 +1,22 @@
 import React from 'react';
 import { Component } from 'react';
 
-import PortalLetters from './portal_letters';
-
 export default class Portal extends Component {
   render() {
     return (
       <section className="portal">
         <div className="portal__letters">
-          <PortalLetters text="THEWEBPORTAL" color="portal" breaks="4, 7" />
-          <span className="portal__letters--aka">OF</span>
-          <PortalLetters text="BERNARDJOHNBOLTERIV" color="bernard" breaks="8, 12, 18" />
-          <span className="portal__letters--aka">AKA</span>
-          <PortalLetters text="THEHISTORICALCOLORIST" color="history" link="http://acolorfulhistory.com/" breaks="4, 13"/>
-          <span className="portal__letters--aka">AKA</span>
-          <PortalLetters text="THETRAVELER" color="travel" link="http://www.digitalcityseries.com/" breaks="4" />
-          <span className="portal__letters--aka">AKA</span>
-          <PortalLetters text="THEPULLUPMAN" color="pullup" link="http://www.pullupgallery.org/" breaks="4, 10" />
-          <span className="portal__letters--aka">AKA</span>
-          <PortalLetters text="THESMOOTHISTCUBIST" color="smooth" link="http://www.smoothism.com/" breaks="4, 13" />
+          <span className="portal__title">THE<span className="portal__title--light-1">WEB</span><span className="portal__title--light-2">PORTAL</span></span>
+          <span className="portal__aka">OF</span>
+          <span className="portal__bernard">BERNARD<span className="portal__bernard--light-1">JOHN</span><span className="portal__bernard--light-2">BOLTER</span><span className="portal__bernard--light-3">IV</span></span>
+          <span className="portal__aka">AKA</span>
+          <a className="portal__history" href="http://acolorfulhistory.com/">THE<span className="portal__history--light-1">HISTORICAL</span><span className="portal__history--light-2">COLORIST</span></a>
+          <span className="portal__aka">AKA</span>
+          <a className="portal__travel" href="http://www.digitalcityseries.com/">THE<span className="portal__travel--light-1">TRAVELER</span></a>
+          <span className="portal__aka">AKA</span>
+          <a className="portal__pullup" href="http://www.pullupgallery.org/">THE<span className="portal__pullup--light-1">PULLUP</span><span className="portal__pullup--light-2">MAN</span></a>
+          <span className="portal__aka">AKA</span>
+          <a className="portal__smooth" href="http://www.smoothism.com/">THE<span className="portal__smooth--light-1">SMOOTHIST</span><span className="portal__smooth--light-2">CUBIST</span></a>
         </div>
         <div className="portal__name-links">
           <div className="portal__name">

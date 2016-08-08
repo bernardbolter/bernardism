@@ -9,17 +9,85 @@
     color: $aka
     margin: 0
     padding: 0
+    font-size: 64px
     font-size: 15vw
     word-wrap: break-word
     text-align: justify
     line-height: 1
     letter-spacing: 0.05em
 
-    +min-screen(500px)
+    +min-screen(900px)
+      font-size: 125px
       font-size: 11vw
 
-    +min-screen(900px)
-      font-size: 11vw
+    a
+      text-decoration: none
+
+  +e(title)
+    color: $portal
+
+    +m(light-1)
+      color: lighten( $portal, 5%)
+
+    +m(light-2)
+      color: lighten( $portal, 10%)
+
+  +e(bernard)
+    color: $bernard
+
+    +m(light-1)
+      color: lighten( $bernard, 5%)
+
+    +m(light-2)
+      color: lighten( $bernard, 10%)
+
+    +m(light-3)
+      color: lighten( $bernard, 15%)
+
+  +e(history)
+    color: $history
+
+    +m(light-1)
+      color: lighten( $history, 5%)
+
+    +m(light-2)
+      color: lighten( $history, 10%)
+
+    +m(light-3)
+      color: lighten( $history, 15%)
+
+  +e(travel)
+    color: $travel
+
+    +m(light-1)
+      color: lighten( $travel, 5%)
+
+    +m(light-2)
+      color: lighten( $travel, 10%)
+
+  +e(pullup)
+    color: $pullup
+
+    +m(light-1)
+      color: lighten( $pullup, 5%)
+
+    +m(light-2)
+      color: lighten( $pullup, 10%)
+
+    +m(light-3)
+      color: lighten( $pullup, 15%)
+
+  +e(smooth)
+    color: $smooth
+
+    +m(light-1)
+      color: lighten( $smooth, 5%)
+
+    +m(light-2)
+      color: lighten( $smooth, 10%)
+
+    +m(light-3)
+      color: lighten( $smooth, 15%)
 
   +e(name-links)
     display: flex
@@ -42,6 +110,7 @@
       font-size: 30px
       opacity: 0.4
       margin: 0 0 5px 0
+      color: $name
 
   +e(links)
     display: flex
