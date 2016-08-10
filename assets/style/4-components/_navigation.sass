@@ -2,10 +2,22 @@
   width: 90%
   background: $navigation_back
   padding: 1% 5%
+  position: relative
   display: flex
   flex-direction: row
   justify-content: space-between
   align-items: center
+  height: 32px
+  top: 0
+
+  +m(pressed)
+    height: 600px
+    transition: (all, 2s, ease-out)
+  //  height: 100%
+    z-index: 1001
+    background: black
+
+
 
   +e(contact)
     color: $navigation_text
