@@ -1,0 +1,81 @@
+.portal
+
+  +e(name-links)
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    width: 98%
+    background: $portal_back
+    margin: 2% 1% 0
+    align-items: flex-end
+
+  +e(name)
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    p
+      font-family: $body-regular
+      display: block
+      text-transform: uppercase
+      font-size: 30px
+      opacity: 0.4
+      margin: 0 0 5px 0
+      color: $name
+
+  +e(links)
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    a
+      font-family: $body-regular
+      text-decoration: none
+      font-size: 18px
+      text-align: right
+      letter-spacing: 0.05em
+      margin: 0 0 5px 0
+      display: flex
+      flex-direction: row
+      align-items: center
+      justify-content: flex-end
+
+      svg
+        opacity: .2
+        transition: $link-animate
+
+      &:hover
+        svg
+          opacity: 1
+
+    +m(color)
+      color: $history
+
+    +m(color-arrow)
+      fill: $history
+      height: 25px
+      margin-left: 6px
+
+    +m(dcs)
+      color: $travel
+
+    +m(travel-arrow)
+      fill: $travel
+      height: 25px
+      margin-left: 6px
+
+    +m(pullup)
+      color: $pullup
+
+    +m(pullup-arrow)
+      fill: $pullup
+      height: 25px
+      margin-left: 6px
+
+    +m(smooth)
+      color: $smooth
+
+    +m(smooth-arrow)
+      fill: $smooth
+      height: 25px
+      margin-left: 6px
