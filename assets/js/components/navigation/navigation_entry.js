@@ -1,42 +1,47 @@
 import React from 'react';
 import { Component } from 'react';
-
 import classNames from 'classNames';
+
+import NavigationHeader from './navigation_header'
+// import NavigationContetn from './navigation_content'
+import Bio from './bio';
 
 let styles = {}
 
-export default class Portal extends Component {
+export default class Navigation extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isPressed: false
+      // adds class to navigation__content div
+      closeNavContent: false
     };
   }
 
-  isPressed(e) {
+  closeNavContent(e) {
     e.preventDefault()
-    let bounding = this.refs.navigation.getBoundingClientRect();
-    let top = -bounding.top
-    console.log(top)
-    styles.top = top
-
-    this.setState({isPressed: true})
+    this.setState({openNavContent: false })
+    this.setState({closeNavContent: false })
   }
 
   render() {
-    var navClass = classNames({
-      'navigation': true,
-      'navigation--pressed': this.state.isPressed
+    var openNavStyle = classNames({
+      'navigation__content': true,
+      'navigation__content--open': this.state.openNavContent
+    });
+    var closeNavStyle = classNames({
+      'navigation__content--close' : true,
+      'navigation__content--reveal': this.state.closeNavContent
+
     });
     return (
-      <section ref='navigation' className={navClass} style={styles}>
-        <h3 className="navigation__contact">b [ at symbol ] bernardbolter.com</h3>
-        <div className="navigation__links">
-          <a href="#" onClick={this.isPressed.bind(this)} className="navigation__links--cv">cv</a>
-          <a href="#" onClick={this.isPressed.bind(this)} className="navigation__links--bio">bio</a>
-          <a href="#" onClick={this.isPressed.bind(this)} className="navigation__links--statement">statement</a>
-          <a href="#" className="navigation__links--videos">videos</a>
+      <section className="navigation">
+        <NavigationHeader />
+        <div className={openNavStyle}>
+          <div className={closeNavStyle}>
+            <a href="#" onClick={this.closeNavContent.bind(this)}>x</a>
+          </div>
+          <Bio />
         </div>
       </section>
     );

@@ -1,44 +1,71 @@
 .navigation
-  width: 90%
-  background: $navigation_back
-  padding: 1% 5%
-  position: relative
-  display: flex
-  flex-direction: row
-  justify-content: space-between
-  align-items: center
-  height: 32px
-  top: 0
+  width: 100%
 
-  +m(pressed)
-    height: 600px
-    transition: (all, 2s, ease-out)
-  //  height: 100%
-    z-index: 1001
-    background: black
+  +e(header)
+    width: 90%
+    background: $navigation_back
+    padding: 1% 5%
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    height: 32px
+    top: 0
 
+    +m(open)
+      height: 600px
+      transition: (all, 2s, ease-out)
+      align-items: flex-start
+    //  height: 100%
+      z-index: 1001
+      background: black
 
-
-  +e(contact)
-    color: $navigation_text
-    opacity: 0.7
-    font-family: $body-regular
-    font-size: 16px
-    margin: 0
-    padding: 0
-    letter-spacing: 0.1em
-
-  +e(links)
-    margin: 0
-    padding: 0
-
-    a
+    +m(contact)
       color: $navigation_text
-      text-decoration: none
-      margin: 0
+      opacity: 0.7
       font-family: $body-regular
-      text-transform: uppercase
-      padding: 0 0 0 30px
-      opacity: 0.5
-      font-size: 22px
+      font-size: 16px
+      margin: 0
+      padding: 0
       letter-spacing: 0.1em
+
+    +m(links)
+      margin: 0
+      padding: 0
+
+      a
+        color: $navigation_text
+        text-decoration: none
+        margin: 0
+        font-family: $body-regular
+        text-transform: uppercase
+        padding: 0 0 0 30px
+        opacity: 0.5
+        font-size: 18px
+        letter-spacing: 0.1em
+
+  +e(content)
+    width: 100%
+    background-color: $navigation_back
+    display: none
+    max-height: 0
+
+    +m(open)
+      max-height: 600px
+      display: block
+      transition: (height, 2s, ease-out)
+
+    +m(close)
+      display: none
+      opacity: 0
+
+    +m(reveal)
+      display: block
+      opacity: 1
+      transition: (opacity, 2s, ease-out)
+
+      a
+        font-size: 30px
+        color: white
+        text-decoration: none

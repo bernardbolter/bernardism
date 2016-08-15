@@ -1,12 +1,12 @@
 import React from 'react';
 import { Component } from 'react';
 
-export default class Portal extends Component {
+export default class Artwork extends Component {
   render() {
     return (
       <section className="artwork">
         <div className="artwork__header">
-          <p>the world + the work =</p>
+          <a href="https://www.instagram.com/p/KVk_3HqAyu/">the whole world + the work =</a>
         </div>
         <div className="artwork__wrapper">
           <div className="artwork__art"><p>under construction</p></div>

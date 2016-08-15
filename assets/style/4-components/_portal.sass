@@ -3,6 +3,7 @@
   padding: 4%
   display: block
   background: $portal_back
+  transition: $letter-animate
 
   +e(letters)
     font-family: $mono-base
@@ -15,6 +16,7 @@
     text-align: justify
     line-height: 1
     letter-spacing: 0.05em
+    transition: $letter-animate
 
     +min-screen(900px)
       font-size: 125px
@@ -23,8 +25,15 @@
     a
       text-decoration: none
 
+    +m(hover)
+      opacity: 0.1
+
+  +e(aka)
+    transition: $letter-animate
+
   +e(title)
     color: $portal
+    transition: $letter-animate
 
     +m(light-1)
       color: lighten( $portal, 5%)
@@ -34,6 +43,7 @@
 
   +e(bernard)
     color: $bernard
+    transition: $letter-animate
 
     +m(light-1)
       color: lighten( $bernard, 5%)
@@ -46,48 +56,77 @@
 
   +e(history)
     color: $history
+    transition: $letter-animate
+
+    +m(hover)
+      position: relative
+      z-index: 1001
+      opacity: 1
+      transition: $letter-animate
+
+    +m(light)
+      color: $history
+      transition: $letter-color-animate
 
     +m(light-1)
-      color: lighten( $history, 5%)
-
-    +m(light-2)
       color: lighten( $history, 10%)
 
-    +m(light-3)
-      color: lighten( $history, 15%)
+    +m(light-2)
+      color: lighten( $history, 20%)
 
   +e(travel)
     color: $travel
+    transition: $letter-animate
+
+    +m(hover)
+      position: relative
+      z-index: 1001
+      opacity: 1
+
+    +m(light)
+      color: $travel
+      transition: $letter-color-animate
 
     +m(light-1)
-      color: lighten( $travel, 5%)
-
-    +m(light-2)
-      color: lighten( $travel, 10%)
+      color: lighten( $travel, 15%)
 
   +e(pullup)
     color: $pullup
+    transition: $letter-animate
+
+    +m(hover)
+      position: relative
+      z-index: 1001
+      opacity: 1
+
+    +m(light)
+      color: $pullup
+      transition: $letter-color-animate
 
     +m(light-1)
-      color: lighten( $pullup, 5%)
-
-    +m(light-2)
       color: lighten( $pullup, 10%)
 
-    +m(light-3)
-      color: lighten( $pullup, 15%)
+    +m(light-2)
+      color: lighten( $pullup, 20%)
 
   +e(smooth)
     color: $smooth
+    transition: $letter-animate
+
+    +m(hover)
+      position: relative
+      z-index: 1001
+      opacity: 1
+
+    +m(light)
+      color: $smooth
+      transition: $letter-color-animate
 
     +m(light-1)
-      color: lighten( $smooth, 5%)
-
-    +m(light-2)
       color: lighten( $smooth, 10%)
 
-    +m(light-3)
-      color: lighten( $smooth, 15%)
+    +m(light-2)
+      color: lighten( $smooth, 20%)
 
   +e(name-links)
     display: flex
