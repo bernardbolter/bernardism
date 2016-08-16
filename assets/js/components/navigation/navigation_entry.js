@@ -1,27 +1,43 @@
 import React from 'react';
 import { Component } from 'react';
-import classNames from 'classNames';
+import Scroll from 'react-scroll';
 
-import NavigationHeader from './navigation_header'
-// import NavigationContetn from './navigation_content'
+import classNames from 'classNames';
 import Bio from './bio';
 
-let styles = {}
+var Link       = Scroll.Link;
+var DirectLink = Scroll.DirectLink;
+var Element    = Scroll.Element;
+var Events     = Scroll.Events;
+var scroll     = Scroll.animateScroll;
+var scrollSpy  = Scroll.scrollSpy;
 
 export default class Navigation extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      // adds class to navigation__content div
+      // adds class to navigation__header div
+      openNavContent: false,
       closeNavContent: false
     };
   }
+  componentDidMount() {
 
-  closeNavContent(e) {
-    e.preventDefault()
-    this.setState({openNavContent: false })
-    this.setState({closeNavContent: false })
+    Events.scrollEvent.register('begin', function(to, element) {
+      console.log("begin", arguments);
+    });
+
+    Events.scrollEvent.register('end', function(to, element) {
+      console.log("end", arguments);
+    });
+
+    scrollSpy.update();
+
+  }
+  componentWillUnmount() {
+    Events.scrollEvent.remove('begin');
+    Events.scrollEvent.remove('end');
   }
 
   render() {
@@ -36,7 +52,17 @@ export default class Navigation extends Component {
     });
     return (
       <section className="navigation">
-        <NavigationHeader />
+        {/* NAVIGATION HEADER */}
+        <div ref='navigation' className="navigation__header">
+          <h3 className="navigation__header--contact">b [ at symbol ] bernardbolter.com</h3>
+          <div className="navigation__header--links">
+            <a href="#" onClick={this.openNavContent.bind(this)} className="navigation__header--cv">cv</a>
+            <a href="#" onClick={this.openNavContent.bind(this)} className="navigation__header--bio">bio</a>
+            <a href="#" onClick={this.openNavContent.bind(this)} className="navigation__header--statement">statement</a>
+            <a href="https://vimeo.com/user4456819" className="navigation__header--videos">videos</a>
+          </div>
+        </div>
+        {/* NAVIGATION CONTENT*/}
         <div className={openNavStyle}>
           <div className={closeNavStyle}>
             <a href="#" onClick={this.closeNavContent.bind(this)}>x</a>
@@ -45,5 +71,24 @@ export default class Navigation extends Component {
         </div>
       </section>
     );
+  }
+
+  openNavContent(e) {
+    e.preventDefault()
+    let bounding = this.refs.navigation.getBoundingClientRect();
+    let top = bounding.top
+    if(this.state.openNavContent === false) {
+      scroll.scrollMore(top);
+    } else {
+      null
+    }
+    this.setState({openNavContent: true })
+    this.setState({closeNavContent: true })
+  }
+
+  closeNavContent(e) {
+    e.preventDefault()
+    this.setState({openNavContent: false })
+    this.setState({closeNavContent: false })
   }
 }
