@@ -45,9 +45,9 @@ export default class Navigation extends Component {
       'navigation__content': true,
       'navigation__content--open': this.state.openNavContent
     });
-    var closeNavStyle = classNames({
-      'navigation__content--close' : true,
-      'navigation__content--reveal': this.state.closeNavContent
+    var closeButton = classNames({
+      'navigation__close' : true,
+      'navigation__close--visible': this.state.closeNavContent
 
     });
     return (
@@ -64,7 +64,7 @@ export default class Navigation extends Component {
         </div>
         {/* NAVIGATION CONTENT*/}
         <div className={openNavStyle}>
-          <div className={closeNavStyle}>
+          <div className={closeButton}>
             <a href="#" onClick={this.closeNavContent.bind(this)}>x</a>
           </div>
           <Bio />
