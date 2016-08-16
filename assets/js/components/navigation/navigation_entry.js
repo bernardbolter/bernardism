@@ -3,7 +3,10 @@ import { Component } from 'react';
 import Scroll from 'react-scroll';
 
 import classNames from 'classNames';
+
+import CV from './cv';
 import Bio from './bio';
+import Statement from './statement';
 
 var Link       = Scroll.Link;
 var DirectLink = Scroll.DirectLink;
@@ -19,7 +22,8 @@ export default class Navigation extends Component {
     this.state = {
       // adds class to navigation__header div
       openNavContent: false,
-      closeNavContent: false
+      closeNavContent: false,
+      renderContent: null
     };
   }
   componentDidMount() {
@@ -50,15 +54,17 @@ export default class Navigation extends Component {
       'navigation__close--visible': this.state.closeNavContent
 
     });
+    var renderContent = '';
+
     return (
       <section className="navigation">
         {/* NAVIGATION HEADER */}
         <div ref='navigation' className="navigation__header">
           <h3 className="navigation__header--contact">b [ at symbol ] bernardbolter.com</h3>
           <div className="navigation__header--links">
-            <a href="#" onClick={this.openNavContent.bind(this)} className="navigation__header--cv">cv</a>
-            <a href="#" onClick={this.openNavContent.bind(this)} className="navigation__header--bio">bio</a>
-            <a href="#" onClick={this.openNavContent.bind(this)} className="navigation__header--statement">statement</a>
+            <a href="#" onClick={this.openNavContent.bind(this, 'cv' )} className="navigation__header--cv">cv</a>
+            <a href="#" onClick={this.openNavContent.bind(this, 'bio' )} className="navigation__header--bio">bio</a>
+            <a href="#" onClick={this.openNavContent.bind(this, 'statement' )} className="navigation__header--statement">statement</a>
             <a href="https://vimeo.com/user4456819" className="navigation__header--videos">videos</a>
           </div>
         </div>
@@ -67,14 +73,23 @@ export default class Navigation extends Component {
           <div className={closeButton}>
             <a href="#" onClick={this.closeNavContent.bind(this)}>x</a>
           </div>
-          <Bio />
+          {renderContent}
         </div>
       </section>
     );
   }
 
-  openNavContent(e) {
+  openNavContent(text, e) {
     e.preventDefault()
+    console.log(text)
+    var renderContent = '';
+    if (text === 'cv') {
+      renderContent = <CV />;
+    } else if (text === 'bio') {
+      renderContent = <Bio />;
+    } else if (text === 'statement') {
+      renderContent = <Statement />;
+    }
     let bounding = this.refs.navigation.getBoundingClientRect();
     let top = bounding.top
     if(this.state.openNavContent === false) {
