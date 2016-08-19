@@ -2,6 +2,8 @@ import React from 'react';
 import { Component } from 'react';
 
 export default class Bio extends Component {
+    const 
+
     render() {
       return (
        <div className="bio">

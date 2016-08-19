@@ -1,7 +1,10 @@
 import React from 'react';
 import { Component } from 'react';
-import Scroll from 'react-scroll';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchBolterInfo} from '../../actions/index';
 
+import Scroll from 'react-scroll';
 import classNames from 'classNames';
 
 import CV from './cv';
@@ -15,7 +18,7 @@ var Events     = Scroll.Events;
 var scroll     = Scroll.animateScroll;
 var scrollSpy  = Scroll.scrollSpy;
 
-export default class Navigation extends Component {
+class Navigation extends Component {
   constructor(props) {
     super(props);
 
@@ -23,7 +26,7 @@ export default class Navigation extends Component {
       // adds class to navigation__header div
       openNavContent: false,
       closeNavContent: false,
-      renderContent: null
+      linkText: ""
     };
   }
   componentDidMount() {
@@ -57,12 +60,12 @@ export default class Navigation extends Component {
     var renderContent = '';
 
     return (
-      <section className="navigation">
+      <section ref="navigation" className="navigation">
         {/* NAVIGATION HEADER */}
-        <div ref='navigation' className="navigation__header">
+        <div className="navigation__header">
           <h3 className="navigation__header--contact">b [ at symbol ] bernardbolter.com</h3>
           <div className="navigation__header--links">
-            <a href="#" onClick={this.openNavContent.bind(this, 'cv' )} className="navigation__header--cv">cv</a>
+            <a href="#" onClick={this.openNavContent.bind(this, 'cv' )} className={'navigation__header--'+this.state.linkText}>cv</a>
             <a href="#" onClick={this.openNavContent.bind(this, 'bio' )} className="navigation__header--bio">bio</a>
             <a href="#" onClick={this.openNavContent.bind(this, 'statement' )} className="navigation__header--statement">statement</a>
             <a href="https://vimeo.com/user4456819" className="navigation__header--videos">videos</a>
@@ -73,7 +76,7 @@ export default class Navigation extends Component {
           <div className={closeButton}>
             <a href="#" onClick={this.closeNavContent.bind(this)}>x</a>
           </div>
-          {renderContent}
+          {this.renderContent()}
         </div>
       </section>
     );
@@ -81,15 +84,7 @@ export default class Navigation extends Component {
 
   openNavContent(text, e) {
     e.preventDefault()
-    console.log(text)
-    var renderContent = '';
-    if (text === 'cv') {
-      renderContent = <CV />;
-    } else if (text === 'bio') {
-      renderContent = <Bio />;
-    } else if (text === 'statement') {
-      renderContent = <Statement />;
-    }
+    // GET DISTANCE FROM NAVIGATION TO TOP AND THEN SCROLL THERE
     let bounding = this.refs.navigation.getBoundingClientRect();
     let top = bounding.top
     if(this.state.openNavContent === false) {
@@ -97,8 +92,11 @@ export default class Navigation extends Component {
     } else {
       null
     }
+    // CHANGE CLASSES ON ELEMENTS TO REVEAL
     this.setState({openNavContent: true })
     this.setState({closeNavContent: true })
+    // PASS INFO TO REDUX TO DISPLAY CORRECT CONTENT
+    this.props.fetchBolterInfo(text);
   }
 
   closeNavContent(e) {
@@ -106,4 +104,23 @@ export default class Navigation extends Component {
     this.setState({openNavContent: false })
     this.setState({closeNavContent: false })
   }
+
+  renderContent() {
+    let contentText = this.state.linkText
+    if (contentText === 'cv') {
+      return <CV />;
+    } else if (contentText === 'bio') {
+      return <Bio />;
+    } else if (contentText === 'statement') {
+      return <Statement />;
+    } else {
+      return null;
+    }
+  }
 }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchBolterInfo }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(Navigation);
