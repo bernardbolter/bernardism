@@ -24,3 +24,21 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Tinos';
+    src: url('fonts/tinos-regular-webfont.woff2') format('woff2'),
+         url('fonts/tinos-regular-webfont.woff') format('woff'),
+         url('fonts/tinos-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway-Light';
+    src: url('fonts/raleway-light-webfont.woff2') format('woff2'),
+         url('fonts/raleway-light-webfont.woff') format('woff'),
+         url('fonts/raleway-light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

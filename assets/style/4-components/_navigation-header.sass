@@ -1,0 +1,56 @@
+.navigation
+  width: 100%
+  background: $navigation_back
+  transition: background 1s ease-in-out
+
+  +e(background)
+    width: 100%
+    background: #bbb
+    transition: background 1s ease-in-out
+
+    a
+      color: #333 !important
+      transition: color 1s ease-in-out
+
+    h3
+      color: #333 !important
+      transition: color 1s ease-in-out
+
+  +e(header)
+    width: 90%
+    padding: 1% 5%
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    height: 32px
+    top: 0
+
+    +m(contact)
+      color: $navigation_text
+      opacity: 0.7
+      font-family: $body-regular
+      font-size: 16px
+      margin: 0
+      padding: 0
+      letter-spacing: 0.1em
+
+    +m(links)
+      margin: 0
+      padding: 0
+
+      a
+        color: $navigation_text
+        text-decoration: none
+        margin: 0
+        font-family: $body-regular
+        text-transform: uppercase
+        padding: 0 0 0 30px
+        opacity: 0.5
+        font-size: 18px
+        letter-spacing: 0.1em
+
+    +m(active)
+      border-bottom: 1px solid #444
+      opacity: 0.9 !important

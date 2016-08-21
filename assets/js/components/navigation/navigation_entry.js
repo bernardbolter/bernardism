@@ -7,9 +7,7 @@ import { fetchBolterInfo} from '../../actions/index';
 import Scroll from 'react-scroll';
 import classNames from 'classNames';
 
-import CV from './cv';
-import Bio from './bio';
-import Statement from './statement';
+import NavigationContent from "./navigation_content";
 
 var Link       = Scroll.Link;
 var DirectLink = Scroll.DirectLink;
@@ -23,10 +21,9 @@ class Navigation extends Component {
     super(props);
 
     this.state = {
-      // adds class to navigation__header div
       openNavContent: false,
       closeNavContent: false,
-      linkText: ""
+      selected: ''
     };
   }
   componentDidMount() {
@@ -49,26 +46,28 @@ class Navigation extends Component {
 
   render() {
     var openNavStyle = classNames({
-      'navigation__content': true,
+      'navigation__content': !this.state.openNavContent,
       'navigation__content--open': this.state.openNavContent
     });
     var closeButton = classNames({
-      'navigation__close' : true,
+      'navigation__close': !this.state.closeNavContent,
       'navigation__close--visible': this.state.closeNavContent
-
     });
-    var renderContent = '';
+    var navigationBackground = classNames({
+      'navigation': true,
+      'navigation__background': this.state.openNavContent
+    });
 
     return (
-      <section ref="navigation" className="navigation">
+      <section ref="navigation" className={navigationBackground}>
         {/* NAVIGATION HEADER */}
         <div className="navigation__header">
           <h3 className="navigation__header--contact">b [ at symbol ] bernardbolter.com</h3>
           <div className="navigation__header--links">
-            <a href="#" onClick={this.openNavContent.bind(this, 'cv' )} className={'navigation__header--'+this.state.linkText}>cv</a>
-            <a href="#" onClick={this.openNavContent.bind(this, 'bio' )} className="navigation__header--bio">bio</a>
-            <a href="#" onClick={this.openNavContent.bind(this, 'statement' )} className="navigation__header--statement">statement</a>
-            <a href="https://vimeo.com/user4456819" className="navigation__header--videos">videos</a>
+            <a href="#" onClick={this.openNavContent.bind(this, 'cv' )} className={this.isActive('cv')} >cv</a>
+            <a href="#" onClick={this.openNavContent.bind(this, 'bio' )} className={this.isActive('bio')} >bio</a>
+            <a href="#" onClick={this.openNavContent.bind(this, 'statement' )} className={this.isActive('statement')} >statement</a>
+            <a href="https://vimeo.com/user4456819">videos</a>
           </div>
         </div>
         {/* NAVIGATION CONTENT*/}
@@ -76,7 +75,9 @@ class Navigation extends Component {
           <div className={closeButton}>
             <a href="#" onClick={this.closeNavContent.bind(this)}>x</a>
           </div>
-          {this.renderContent()}
+          <div className="navigation__bodywrapper">
+            <NavigationContent />
+          </div>
         </div>
       </section>
     );
@@ -95,27 +96,21 @@ class Navigation extends Component {
     // CHANGE CLASSES ON ELEMENTS TO REVEAL
     this.setState({openNavContent: true })
     this.setState({closeNavContent: true })
+    // HIGHLIGHT NAV BUTTONS
+    this.setState({selected: text })
     // PASS INFO TO REDUX TO DISPLAY CORRECT CONTENT
     this.props.fetchBolterInfo(text);
+  }
+
+  isActive(value) {
+    return 'navigation__header--' + ((value === this.state.selected) ? 'active' : '');
   }
 
   closeNavContent(e) {
     e.preventDefault()
     this.setState({openNavContent: false })
     this.setState({closeNavContent: false })
-  }
-
-  renderContent() {
-    let contentText = this.state.linkText
-    if (contentText === 'cv') {
-      return <CV />;
-    } else if (contentText === 'bio') {
-      return <Bio />;
-    } else if (contentText === 'statement') {
-      return <Statement />;
-    } else {
-      return null;
-    }
+    this.setState({selected: ''})
   }
 }
 

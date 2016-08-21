@@ -1,57 +1,42 @@
+.example-enter
+  opacity: 0.01
+
+.example-enter.example-enter-active
+  opacity: 1
+  transition: opacity 2000ms ease-in
+
+.example-leave
+  opacity: 1
+
+.example-leave.example-leave-active
+  opacity: 0.01
+  transition: opacity 20ms ease-out
+
 .navigation
-  width: 100%
 
-  +e(header)
-    width: 90%
-    background: $navigation_back
-    padding: 1% 5%
-    position: relative
-    display: flex
-    flex-direction: row
-    justify-content: space-between
-    align-items: center
-    height: 32px
-    top: 0
+  +e(body)
+    width: 60%
+    margin: 0 20%
+    padding: 2% 0
 
-    +m(contact)
-      color: $navigation_text
-      opacity: 0.7
-      font-family: $body-regular
-      font-size: 16px
-      margin: 0
-      padding: 0
-      letter-spacing: 0.1em
-
-    +m(links)
-      margin: 0
-      padding: 0
-
-      a
-        color: $navigation_text
-        text-decoration: none
-        margin: 0
-        font-family: $body-regular
-        text-transform: uppercase
-        padding: 0 0 0 30px
-        opacity: 0.5
-        font-size: 18px
-        letter-spacing: 0.1em
-
-    +m(cv)
-      border-bottom: 3px solif $navigation_text
+    p
+      color: #232323
+      font-size: 18px
+      font-family: $content-font
+      line-height: 1.6
+      letter-spacing: 0.04em
 
   +e(content)
     width: 100%
-    background-color: $navigation_back
-    display: none
-    opacity: 0
-    transition: all, 2s, ease-out
+    max-height: 0
+    overflow: hidden
+    transition: max-height 2s ease-out
 
     +m(open)
+      width: 100%
       max-height: 2000px
-      display: block
-      opacity: 1
-      transition: all, 2s, ease-out
+      overflow: hidden
+      transition: max-height 2s ease-in
 
   +e(close)
     display: block
