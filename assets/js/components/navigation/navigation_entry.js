@@ -50,7 +50,7 @@ class Navigation extends Component {
       'navigation__content--open': this.state.openNavContent
     });
     var closeButton = classNames({
-      'navigation__close': !this.state.closeNavContent,
+      'navigation__close': true,
       'navigation__close--visible': this.state.closeNavContent
     });
     var navigationBackground = classNames({
@@ -73,7 +73,7 @@ class Navigation extends Component {
         {/* NAVIGATION CONTENT*/}
         <div className={openNavStyle}>
           <div className={closeButton}>
-            <a href="#" onClick={this.closeNavContent.bind(this)}>x</a>
+            <a href="#" onClick={this.closeNavContent.bind(this)} className="navigation__close--button"></a>
           </div>
           <div className="navigation__bodywrapper">
             <NavigationContent />

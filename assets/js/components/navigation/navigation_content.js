@@ -10,7 +10,7 @@ class NavigationContent extends Component {
   }
   render() {
     return (
-        <ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={2000} transitionLeaveTimeout={20}>
+        <ReactCSSTransitionGroup transitionName="info-text" transitionEnterTimeout={1000} transitionLeaveTimeout={1}>
           {this.props.bolterInfo.map(this.renderContent)}
         </ReactCSSTransitionGroup>
     )
