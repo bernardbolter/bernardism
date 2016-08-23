@@ -112,67 +112,69 @@ render() {
 
     return (
       <section className="portal">
-        <div className="portal__letters">
-          <span className={'portal__title ' + lettersHoverClass}>THE<span className="portal__title--light-1">WEB</span><span className="portal__title--light-2">PORTAL</span></span>
-          <span className={'portal__aka ' + lettersHoverClass}>OF</span>
-          <span className={'portal__bernard ' + lettersHoverClass}>BERNARD<span className="portal__bernard--light-1">JOHN</span><span className="portal__bernard--light-2">BOLTER</span><span className="portal__bernard--light-3">IV</span></span>
-          <span className={'portal__aka '  + lettersHoverClass}>AKA</span>
-          <a className={historyHover + ' ' + lettersHoverClass}
-              onMouseEnter={this.lettersHover.bind(this, 'history')}
-              onMouseLeave={this.lettersHoverOut.bind(this, 'history')}
-              href="http://acolorfulhistory.com/">
-              THE<span className={'portal__history--light ' + historyLight +'1'}>HISTORICAL</span><span className={'portal__history--light ' + historyLight +'2'}>COLORIST</span>
-          </a>
-          <span className={'portal__aka '  + lettersHoverClass}>AKA</span>
-          <a className={travelHover + ' ' + lettersHoverClass}
-            onMouseEnter={this.lettersHover.bind(this, 'travel')}
-            onMouseLeave={this.lettersHoverOut.bind(this, 'travel')}
-            href="http://www.digitalcityseries.com/">
-            THE<span className={'portal__travel--light ' + travelLight +'1'}>TRAVELER</span>
-          </a>
-          <span className={'portal__aka '  + lettersHoverClass}>AKA</span>
-          <a className={pullupHover + ' ' + lettersHoverClass}
-            onMouseEnter={this.lettersHover.bind(this, 'pullup')}
-            onMouseLeave={this.lettersHoverOut.bind(this, 'pullup')}
-            href="http://www.pullupgallery.org/">
-            THE<span className={'portal__pullup--light ' + pullupLight +'1'}>PULLUP</span><span className={'portal__pullup--light ' + pullupLight +'2'}>MAN</span>
-          </a>
-          <span className={'portal__aka '  + lettersHoverClass}>AKA</span>
-          <a className={smoothHover + ' ' + lettersHoverClass}
-            onMouseEnter={this.lettersHover.bind(this, 'smooth')}
-            onMouseLeave={this.lettersHoverOut.bind(this, 'smooth')}
-            href="http://www.smoothism.com/">
-            THE<span className={'portal__smooth--light ' + smoothLight +'1'}>SMOOTHIST</span><span className={'portal__smooth--light ' + smoothLight +'2'}>CUBIST</span>
-          </a>
-        </div>
-        <div className="portal__name-links">
-          <div className="portal__name">
-            <p>Bernard</p>
-            <p>John</p>
-            <p>Bolter</p>
-            <p>IV</p>
+        <div className="max-width">
+          <div className="portal__letters">
+            <span className={'portal__title ' + lettersHoverClass}>THE<span className="portal__title--light-1">WEB</span><span className="portal__title--light-2">PORTAL</span></span>
+            <span className={'portal__aka ' + lettersHoverClass}>OF</span>
+            <span className={'portal__bernard ' + lettersHoverClass}>BERNARD<span className="portal__bernard--light-1">JOHN</span><span className="portal__bernard--light-2">BOLTER</span><span className="portal__bernard--light-3">IV</span></span>
+            <span className={'portal__aka '  + lettersHoverClass}>AKA</span>
+            <a className={historyHover + ' ' + lettersHoverClass}
+                onMouseEnter={this.lettersHover.bind(this, 'history')}
+                onMouseLeave={this.lettersHoverOut.bind(this, 'history')}
+                href="http://acolorfulhistory.com/">
+                THE<span className={'portal__history--light ' + historyLight +'1'}>HISTORICAL</span><span className={'portal__history--light ' + historyLight +'2'}>COLORIST</span>
+            </a>
+            <span className={'portal__aka '  + lettersHoverClass}>AKA</span>
+            <a className={travelHover + ' ' + lettersHoverClass}
+              onMouseEnter={this.lettersHover.bind(this, 'travel')}
+              onMouseLeave={this.lettersHoverOut.bind(this, 'travel')}
+              href="http://www.digitalcityseries.com/">
+              THE<span className={'portal__travel--light ' + travelLight +'1'}>TRAVELER</span>
+            </a>
+            <span className={'portal__aka '  + lettersHoverClass}>AKA</span>
+            <a className={pullupHover + ' ' + lettersHoverClass}
+              onMouseEnter={this.lettersHover.bind(this, 'pullup')}
+              onMouseLeave={this.lettersHoverOut.bind(this, 'pullup')}
+              href="http://www.pullupgallery.org/">
+              THE<span className={'portal__pullup--light ' + pullupLight +'1'}>PULLUP</span><span className={'portal__pullup--light ' + pullupLight +'2'}>MAN</span>
+            </a>
+            <span className={'portal__aka '  + lettersHoverClass}>AKA</span>
+            <a className={smoothHover + ' ' + lettersHoverClass}
+              onMouseEnter={this.lettersHover.bind(this, 'smooth')}
+              onMouseLeave={this.lettersHoverOut.bind(this, 'smooth')}
+              href="http://www.smoothism.com/">
+              THE<span className={'portal__smooth--light ' + smoothLight +'1'}>SMOOTHIST</span><span className={'portal__smooth--light ' + smoothLight +'2'}>CUBIST</span>
+            </a>
           </div>
-          <div className="portal__links">
-            <a className="portal__links--color" href="http://acolorfulhistory.com/">acolorfulhistory.com
-              <svg className='portal__links--color-arrow' viewBox='0 0 512 512' preserveAspectRatio='xMinYMin meet'>
+          <div className="portal__name-links">
+            <div className="portal__name">
+              <p>Bernard</p>
+              <p>John</p>
+              <p>Bolter</p>
+              <p>IV</p>
+            </div>
+            <div className="portal__links">
+              <a className="portal__links--color" href="http://acolorfulhistory.com/">acolorfulhistory.com
+                <svg className='portal__links--color-arrow' viewBox='0 0 512 512' preserveAspectRatio='xMinYMin meet'>
+                    <use xlinkHref='../svgs/defs.svg#svg-link' />
+                </svg>
+              </a>
+              <a className="portal__links--dcs" href="http://www.digitalcityseries.com/">digitalcityseries.com
+                <svg className='portal__links--travel-arrow' viewBox='0 0 512 512' preserveAspectRatio='xMinYMin meet'>
+                    <use xlinkHref='../svgs/defs.svg#svg-link' />
+                </svg>
+              </a>
+              <a className="portal__links--pullup" href="http://www.pullupgallery.org/">pullupgallery.org
+                <svg className='portal__links--pullup-arrow' viewBox='0 0 512 512' preserveAspectRatio='xMinYMin meet'>
+                    <use xlinkHref='../svgs/defs.svg#svg-link' />
+                </svg>
+              </a>
+              <a className="portal__links--smooth" href="http://www.smoothism.com/">smoothism.com
+              <svg className='portal__links--smooth-arrow' viewBox='0 0 512 512' preserveAspectRatio='xMinYMin meet'>
                   <use xlinkHref='../svgs/defs.svg#svg-link' />
               </svg>
-            </a>
-            <a className="portal__links--dcs" href="http://www.digitalcityseries.com/">digitalcityseries.com
-              <svg className='portal__links--travel-arrow' viewBox='0 0 512 512' preserveAspectRatio='xMinYMin meet'>
-                  <use xlinkHref='../svgs/defs.svg#svg-link' />
-              </svg>
-            </a>
-            <a className="portal__links--pullup" href="http://www.pullupgallery.org/">pullupgallery.org
-              <svg className='portal__links--pullup-arrow' viewBox='0 0 512 512' preserveAspectRatio='xMinYMin meet'>
-                  <use xlinkHref='../svgs/defs.svg#svg-link' />
-              </svg>
-            </a>
-            <a className="portal__links--smooth" href="http://www.smoothism.com/">smoothism.com
-            <svg className='portal__links--smooth-arrow' viewBox='0 0 512 512' preserveAspectRatio='xMinYMin meet'>
-                <use xlinkHref='../svgs/defs.svg#svg-link' />
-            </svg>
-            </a>
+              </a>
+            </div>
           </div>
         </div>
       </section>

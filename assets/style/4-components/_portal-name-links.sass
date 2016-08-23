@@ -18,10 +18,13 @@
       font-family: $body-regular
       display: block
       text-transform: uppercase
-      font-size: 30px
+      font-size: 24px
       opacity: 0.4
       margin: 0 0 5px 0
       color: $name
+
+      +min-screen(700px)
+        font-size: 30px
 
   +e(links)
     display: flex
@@ -31,7 +34,7 @@
     a
       font-family: $body-regular
       text-decoration: none
-      font-size: 18px
+      font-size: 14px
       text-align: right
       letter-spacing: 0.05em
       margin: 0 0 5px 0
@@ -39,6 +42,9 @@
       flex-direction: row
       align-items: center
       justify-content: flex-end
+
+      +min-screen(700px)
+        font-size: 18px
 
       svg
         opacity: .2
@@ -53,29 +59,42 @@
 
     +m(color-arrow)
       fill: $history
-      height: 25px
+      height: 15px
       margin-left: 6px
+
+      +min-screen(700px)
+        font-size: 25px
 
     +m(dcs)
       color: $travel
 
     +m(travel-arrow)
       fill: $travel
-      height: 25px
+      height: 15px
       margin-left: 6px
+
+      +min-screen(700px)
+        font-size: 25px
+
 
     +m(pullup)
       color: $pullup
 
     +m(pullup-arrow)
       fill: $pullup
-      height: 25px
+      height: 15px
       margin-left: 6px
+
+      +min-screen(700px)
+        font-size: 25px
 
     +m(smooth)
       color: $smooth
 
     +m(smooth-arrow)
       fill: $smooth
-      height: 25px
+      height: 15px
       margin-left: 6px
+
+      +min-screen(700px)
+        font-size: 25px

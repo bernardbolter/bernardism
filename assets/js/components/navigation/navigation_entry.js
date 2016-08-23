@@ -60,23 +60,25 @@ class Navigation extends Component {
 
     return (
       <section ref="navigation" className={navigationBackground}>
-        {/* NAVIGATION HEADER */}
-        <div className="navigation__header">
-          <h3 className="navigation__header--contact">b [ at symbol ] bernardbolter.com</h3>
-          <div className="navigation__header--links">
-            <a href="#" onClick={this.openNavContent.bind(this, 'cv' )} className={this.isActive('cv')} >cv</a>
-            <a href="#" onClick={this.openNavContent.bind(this, 'bio' )} className={this.isActive('bio')} >bio</a>
-            <a href="#" onClick={this.openNavContent.bind(this, 'statement' )} className={this.isActive('statement')} >statement</a>
-            <a href="https://vimeo.com/user4456819">videos</a>
+        <div className="max-width">
+          {/* NAVIGATION HEADER */}
+          <div className="navigation__header">
+            <h3 className="navigation__header--contact">b [ at symbol ] bernardbolter.com</h3>
+            <div className="navigation__header--links">
+              <a href="#" onClick={this.openNavContent.bind(this, 'cv' )} className={this.isActive('cv')} >cv</a>
+              <a href="#" onClick={this.openNavContent.bind(this, 'bio' )} className={this.isActive('bio')} >bio</a>
+              <a href="#" onClick={this.openNavContent.bind(this, 'statement' )} className={this.isActive('statement')} >statement</a>
+              <a href="https://vimeo.com/user4456819">videos</a>
+            </div>
           </div>
-        </div>
-        {/* NAVIGATION CONTENT*/}
-        <div className={openNavStyle}>
-          <div className={closeButton}>
-            <a href="#" onClick={this.closeNavContent.bind(this)} className="navigation__close--button"></a>
-          </div>
-          <div className="navigation__bodywrapper">
-            <NavigationContent />
+          {/* NAVIGATION CONTENT*/}
+          <div className={openNavStyle}>
+            <div className={closeButton}>
+              <a href="#" onClick={this.closeNavContent.bind(this)} className="navigation__close--button"></a>
+            </div>
+            <div className="navigation__bodywrapper">
+              <NavigationContent />
+            </div>
           </div>
         </div>
       </section>

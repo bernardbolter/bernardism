@@ -13,13 +13,16 @@
 
     a
       font-family: $body-regular
-      font-size: 30px
+      font-size: 18px
       text-align: right
       margin: 0
       padding: 0
       color: #000
       text-decoration: none
       display: block
+
+      +min-screen(700px)
+        font-size: 30px
 
   +e(wrapper)
     width: 90%
@@ -34,10 +37,13 @@
 
     p
       font-family: $body-regular
-      font-size: 30px
+      font-size: 18px
       text-align: right
       margin: 0
       padding: 0
+
+      +min-screen(700px)
+        font-size: 30px
 
   +e(interim)
     padding-top: 250%
