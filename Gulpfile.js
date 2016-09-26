@@ -148,7 +148,6 @@ gulp.task('svg-in', function() {
 gulp.task('svg-out', function() {
     gulp.src(path.SVG)
     	.pipe(rename({prefix: 'svg-'}))
-    	.pipe(svgmin())
     	.pipe(svgstore())
     	.pipe(rename('defs.svg'))
     	.pipe(gulp.dest('./builds/outbound/svgs'))
@@ -208,6 +207,6 @@ gulp.task('watch', function() {
 
 gulp.task('default', ['svg-in', 'html-in', 'style-in', 'webpack-in', 'img-in', 'fonts-in', 'connect', 'watch']);
 
-gulp.task('outbound', ['svg-out', 'html-out', 'style-out', 'webpack-out', 'images-out', 'fonts-out']);
+gulp.task('outbound', ['svg-out', 'html-out', 'style-out', 'webpack-out', 'img-out', 'fonts-out']);
 
 gulp.task('clean', ['clean-in', 'clean-out']);
