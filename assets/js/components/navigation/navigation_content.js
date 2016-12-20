@@ -5,7 +5,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 class NavigationContent extends Component {
   renderContent(contentData){
     return (
-      <div className='navigation__body' key={contentData[0].id} dangerouslySetInnerHTML = {{__html: contentData[0].content.rendered}} />
+      <div className='navigation__body' key={contentData.id} dangerouslySetInnerHTML = {{__html: contentData.content.rendered}} />
     );
   }
   render() {

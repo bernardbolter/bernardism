@@ -1,6 +1,5 @@
 .artwork
   width: 100%
-  height: 1000px
   background: #fff
   margin: 0
   padding: 0
@@ -25,12 +24,10 @@
         font-size: 30px
 
   +e(wrapper)
-    width: 90%
+    width: 100%
     margin: 0
-    padding: 1% 5% 1%
-    display: flex
-    flex-direction: column
-    justify-content: flex-end
+    padding: 4% 0
+    display: block
 
 
   +e(art)
@@ -45,30 +42,32 @@
       +min-screen(700px)
         font-size: 30px
 
-  +e(interim)
-    padding-top: 250%
-    align: left
-    max-width: 400px
-    margin: 2.5%
-    font-family: $body-regular
+.anArtwork
+  width: 96%
+  padding-bottom: 115px
+  float: left
+  margin: 0 2%
 
-    +m(header)
-      font-size: 16px
-      color: #777
-      text-align: left
+  +min-screen(600px)
+    width: 48%
+    margin: 1%
 
-    img
-      width: 100%
+  +min-screen(900px)
+    width: 31%
+    margin: 1%
 
-    +m(title)
-      font-size: 20px
-      text-align: right
-      color: #333
-      margin: 3px 0
+  img
+    width: 100%
 
-    +m(details)
-      font-size: 14px
-      color: #666
-      text-align: right
-      margin: 0
-      padding: 0
+  +e(title)
+    font-size: 16px
+    text-align: right
+    font-weight: bold
+    margin: 5px 0 0 0
+    padding: 0
+
+  +e(info)
+    font-size: 12px
+    text-align: right
+    letter-spacing: 0.05em
+    margin: 3px 0 0 0

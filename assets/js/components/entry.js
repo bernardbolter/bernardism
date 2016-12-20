@@ -3,7 +3,7 @@ import { Component } from 'react';
 
 import Portal from './portal/portal_entry';
 import Navigation from './navigation/navigation_entry';
-import Artwork from './artwork/artwork_entry';
+import Artworks from './artwork/artwork_entry';
 
 export default class Entry extends Component {
   render() {
@@ -11,7 +11,7 @@ export default class Entry extends Component {
       <div className="layout">
         <Portal />
         <Navigation />
-        <Artwork />
+        <Artworks />
       </div>
     );
   }
