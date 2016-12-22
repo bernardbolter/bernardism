@@ -4,16 +4,19 @@ import _ from 'lodash';
 
 export default function(state = [], action) {
   console.log('Action recieved', action);
-  if (action.payload !== undefined) {
-    var allArtwork = _.shuffle(action.payload.data);
+  if (action.type == FETCH_BOLTER_ARTWORK) {
+    var storedArt = action.payload.data;
+    console.log('storedArt:', storedArt);
+  } else if (action.type == SORT_ARTWORK_PAST) {
+    var shuffledArtwork = _.shuffle(storedArt);
+    console.log('shuffledArtwork:', shuffledArtwork);
   }
-  console.log('allArtwork:', allArtwork)
 
   switch (action.type) {
     case FETCH_BOLTER_ARTWORK:
       return action.payload.data;
     case SORT_ARTWORK_PAST:
-      return allArtwork;
+      return shuffledArtwork;
   }
   return state;
 }

@@ -5,9 +5,6 @@ const BOLTER_ARTWORK_URL = 'http://bolter.acolorfulhistory.com/wp-json/wp/v2/art
 export const FETCH_BOLTER_ARTWORK = 'FETCH_BOLTER_ARTWORK';
 export const SORT_ARTWORK_PAST = 'SORT_ARTWORK_PAST';
 
-const artworkStart = axios.get(BOLTER_ARTWORK_URL);
-console.log('artStart:', artworkStart);
-
 export function fetchBolterArtwork() {
   const artRequest = axios.get(BOLTER_ARTWORK_URL);
 
@@ -21,6 +18,6 @@ export function getBolterArtwork() {
 
   return {
     type: SORT_ARTWORK_PAST,
-    payload: artSorted
+    payload: "random"
   };
 }

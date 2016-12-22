@@ -22,8 +22,7 @@ class Artworks extends Component {
   }
 
   listArtwork(art) {
-
-      return(  // <artwork key={art.id} art={art} />
+    return (
       <div key={art.id} className="anArtwork">
         <a href={art.link} >
           <img src={art.imageMedium} />
@@ -31,7 +30,8 @@ class Artworks extends Component {
           <p className="anArtwork__info">{art.width} x {art.height} | {art.copyrightYear} | {art.artform}</p>
         </a>
       </div>
-  )}
+    )
+  }
 
   render = () => {
     return (
